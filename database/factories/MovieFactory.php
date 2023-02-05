@@ -14,13 +14,21 @@ class MovieFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+
     public function definition()
     {
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \Xylis\FakerCinema\Provider\Movie($faker));
         return [
-            'title' => $this->faker->title(),
-            'poster_path' => 'https://m.media-amazon.com/images/I/71ZJ8am0mKL.jpg',
-            'description' => $this->faker->paragraph(3),
-            'date_published' => $this->faker->date()
+            'title' => $faker->movie,
+            'genres'=> implode(",", $faker->movieGenres(3, $duplicate = false)),
+            'studio'=> $faker->studio,
+            'runtime'=> $faker->runtime,
+            'director'=> $this->faker->name(),
+            'actor'=> $this->faker->name(),
+            'description' => $faker->overview,
+            'released_date' => $this->faker->date()
         ];
     }
 }

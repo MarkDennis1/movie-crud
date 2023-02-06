@@ -1,11 +1,11 @@
-
+<x-toast />
 <x-layout title="Favorite Movies" header1="LIST OF MY" header2="FAVORITE MOVIES">
     <div class="lg:max-w-6xl md:max-w-3xl mx-auto px-2 md:px-4">
         <!-- buttons container -->
         <div class="flex w-full justify-between gap-4 mb-4">
 
             <!-- tools container -->
-            <div class="flex flex-col flex-grow md:flex-row justify-between md:items-center gap-4">
+            <div class="flex flex-col flex-grow md:flex-row justify-between gap-4">
                 <!-- buttons -->
                 <a href="{{route('movies.index')}}">
                     <div class="relative">
@@ -19,6 +19,7 @@
                 </a>
 
                 <!-- search -->
+
                 <form method="get" class="flex flex-grow justify-between">
                     <input type="text" placeholder="Search title, actor, genre, etc." name="search" class= "flex flex-grow px-2 py-1 md:px-4 md:py-2 rounded-l-lg outline-none ring-1 ring-[#F33A2E]" >
                     <button type="submit">
@@ -29,6 +30,7 @@
                         </div>
                     </button>
                 </form>
+
             </div>
 
             <!-- Add button -->

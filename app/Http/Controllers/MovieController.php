@@ -63,7 +63,7 @@ class MovieController extends Controller
         unset($data['hours']);
         unset($data['minutes']);
         Movie::create($data);
-        return redirect()->route('movies.index');
+        return redirect()->route('movies.index')->with('message', 'Movie saved successfully!');
     }
 
     //Show form for editing movie
@@ -102,7 +102,7 @@ class MovieController extends Controller
         unset($data['hours']);
         unset($data['minutes']);
         $movie->update($data);
-        return redirect()->route('movies.index');
+        return redirect()->route('movies.index')->with('message', 'Movie updated successfully!');
     }
 
     //Delete movie
@@ -111,6 +111,6 @@ class MovieController extends Controller
             Storage::disk('public')->delete($movie->poster_path);
         }
         $movie->delete();
-        return redirect()->route('movies.index');
+        return redirect()->route('movies.index')->with('message', 'Movie removed!');
     }
 }

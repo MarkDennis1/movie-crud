@@ -32,7 +32,7 @@
                             <p class="font-semibold">Genres:</p>
                             @foreach ($genres as $genre)
                             <a href="/?genre={{$genre}}">
-                                <div class="rounded-lg text-[.6rem] bg-gray-600 hover:bg-[#F33A2E] p-1 line-clamp-1">{{$genre}}</div>
+                                <div class="text-white rounded-lg text-[.6rem] bg-gray-600 hover:bg-[#F33A2E] p-1 line-clamp-1">{{$genre}}</div>
                             </a>
                             @endforeach
                         </div>
